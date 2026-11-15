@@ -160,6 +160,7 @@ private:
 	ALevel Level;
 	AsPlatform Platform;
 	AsBorder Border;
+	
 
 	
 
