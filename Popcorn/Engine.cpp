@@ -380,7 +380,7 @@ void AsPlatform::Draw(HDC hdc, AsEngine* engine, RECT &paint_area)
 	SelectObject(hdc, Platform_Circle_Pen);
 	SelectObject(hdc, Platform_Circle_Brush);
 
-	Ellipse(hdc, x * AsEngine::AsConfig::Global_Scale, y * AsConfig::Global_Scale, (x + AsEngine::Circle_Size) * AsConfig::Global_Scale, (y + AsEngine::Circle_Size) * AsConfig::Global_Scale);
+	Ellipse(hdc, x * AsConfig::Global_Scale, y * AsConfig::Global_Scale, (x + AsEngine::Circle_Size) * AsConfig::Global_Scale, (y + AsEngine::Circle_Size) * AsConfig::Global_Scale);
 	Ellipse(hdc, (x + Inner_Width) * AsConfig::Global_Scale, y * AsConfig::Global_Scale, (x + AsEngine::Circle_Size + Inner_Width) * AsConfig::Global_Scale, (y + AsEngine::Circle_Size) * AsConfig::Global_Scale);
 
 	// 2. Рисуем блик
@@ -413,7 +413,7 @@ void AsEngine::Init_Engine(HWND hwnd)
 	Hwnd = hwnd;
 
 
-	Create_Pen_Brush(15, 63, 31, BG_Pen, BG_Brush);
+	AsConfig::Create_Pen_Brush(15, 63, 31, BG_Pen, BG_Brush);
 	
 
 	Ball.Init();
@@ -445,7 +445,7 @@ void AsEngine::Draw(HDC hdc, RECT &paint_area)
 
 		Ball.Draw(hdc, paint_area, this);
 
-	Border.Draw_Bounds(hdc, paint_area, this);
+		Border.Draw_Bounds(hdc, paint_area, BG_Pen, BG_Brush);
 }
 //------------------------------------------------------------------------------------------------------------
 int AsEngine::On_Key_Down(EKey_Type key_type)
