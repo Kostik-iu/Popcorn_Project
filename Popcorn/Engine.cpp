@@ -1,4 +1,5 @@
 #include "Engine.h"
+#include "Config.h"
 
 char Level_01[ALevel::Level_Height][ALevel::Level_Width] =
 {
