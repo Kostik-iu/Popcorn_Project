@@ -4,6 +4,7 @@
 #include "Border.h"
 #include "Config.h"
 #include "Level.h"
+#include "Ball.h"
 
 #define _USE_MATH_DEFINES
 #include <math.h>
@@ -28,32 +29,7 @@ class ABall;
 //------------------------------------------------------------------------------------------------------------
 
 
-//------------------------------------------------------------------------------------------------------------
-class ABall
-{
-public:
 
-	ABall();
-
-	void Init();
-	void Draw(HDC hdc, RECT& paint_area, AsEngine *engine);
-	void Move(AsEngine *engine, ALevel *level, AsPlatform *platform);
-
-	double Ball_Direction;
-	static const int Ball_Size = AsConfig::Ball_Size;
-
-	HPEN  Ball_Pen;
-	HBRUSH  Ball_Brush;
-
-private:
-	int Ball_X_Pos, Ball_Y_Pos;
-	double Ball_Speed;
-
-	HWND Hwnd;
-	RECT Ball_Rect, Prev_Ball_Rect;
-
-};
-//------------------------------------------------------------------------------------------------------------
 
 
 class AsPlatform
