@@ -8,6 +8,9 @@
 class AsBorder
 {
 public:
+
+	AsBorder();
+
 	void Init();
 	void Draw_Bounds(HDC hdc, RECT& paint_area, HPEN bg_pen, HBRUSH bg_brush);
 	static const int Border_Y_Offset = 4;

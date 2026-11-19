@@ -2,6 +2,13 @@
 #include "Config.h"
 
 //------------------------------------------------------------------------------------------------------------
+
+AsBorder::AsBorder()
+	: Border_Blue_Pen(nullptr), Border_White_Pen(nullptr), Border_Blue_Brush(nullptr), Border_White_Brush(nullptr)
+{
+
+}
+
 void AsBorder::Init()
 {
 

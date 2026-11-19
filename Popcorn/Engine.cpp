@@ -109,10 +109,9 @@ void ABall::Move(AsEngine *engine, ALevel *level, AsPlatform *platform)
 
 
 AsPlatform::AsPlatform()
-	: Inner_Width(21), X_Pos(AsBorder::Border_X_Offset), Platform_X_Step(AsConfig::Global_Scale * 2), Platform_Width(28), 
-	  Highlight_Pen(nullptr), Platform_Circle_Pen(nullptr), Platform_Inner_Pen(nullptr), Platform_Circle_Brush(nullptr), Platform_Inner_Brush(nullptr), Platform_Rect{}, Prev_Platform_Rect{}
+	: Platform_X_Step(AsConfig::Global_Scale * 2), X_Pos(AsBorder::Border_X_Offset), Platform_Width(28), Inner_Width(21),Highlight_Pen(nullptr), Platform_Circle_Pen(nullptr), Platform_Inner_Pen(nullptr),
+	Platform_Circle_Brush(nullptr),Platform_Inner_Brush(nullptr), Platform_Rect{}, Prev_Platform_Rect{}
 {
-
 }
 //------------------------------------------------------------------------------------------------------------
 
