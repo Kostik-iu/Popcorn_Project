@@ -4,7 +4,7 @@
 
 
 ABall::ABall()
-	: Ball_X_Pos(20), Ball_Y_Pos(170), Ball_Speed(3.0), Ball_Direction(M_PI - M_PI_4)
+	: Ball_X_Pos(20), Ball_Y_Pos(170), Ball_Speed(3.0), Ball_Direction(M_PI - M_PI_4), Ball_Pen(nullptr), Ball_Brush(nullptr), Hwnd(nullptr), Ball_Rect{}, Prev_Ball_Rect{}
 {
 
 }
@@ -109,7 +109,8 @@ void ABall::Move(AsEngine *engine, ALevel *level, AsPlatform *platform)
 
 
 AsPlatform::AsPlatform()
-	: Inner_Width(21), X_Pos(AsBorder::Border_X_Offset), Platform_X_Step(AsConfig::Global_Scale * 2), Platform_Width(28)
+	: Inner_Width(21), X_Pos(AsBorder::Border_X_Offset), Platform_X_Step(AsConfig::Global_Scale * 2), Platform_Width(28), 
+	  Highlight_Pen(nullptr), Platform_Circle_Pen(nullptr), Platform_Inner_Pen(nullptr), Platform_Circle_Brush(nullptr), Platform_Inner_Brush(nullptr), Platform_Rect{}, Prev_Platform_Rect{}
 {
 
 }
@@ -184,6 +185,7 @@ void AsPlatform::Draw(HDC hdc, AsEngine* engine, RECT &paint_area)
 
 
 AsEngine::AsEngine()
+	: Hwnd(nullptr), BG_Pen(nullptr), BG_Brush(nullptr), Ball{}, Level{}, Platform{}, Border{}
 
 {
 
@@ -211,7 +213,7 @@ void AsEngine::Init_Engine(HWND hwnd)
 void AsEngine::Draw(HDC hdc, RECT &paint_area)
 {// Отрисовка экрана игры
 
-	RECT intersection_rect;
+	
 
 		Level.Draw(hdc,paint_area);
 

@@ -34,6 +34,7 @@ class ABall
 public:
 
 	ABall();
+
 	void Init();
 	void Draw(HDC hdc, RECT& paint_area, AsEngine *engine);
 	void Move(AsEngine *engine, ALevel *level, AsPlatform *platform);
@@ -76,8 +77,8 @@ private:
 
 	int Inner_Width;
 
-	HPEN Highlight_Pen, Platform_Circle_Pen, Platform_Inner_Pen;
-	HBRUSH Platform_Circle_Brush, Platform_Inner_Brush;
+	HPEN Highlight_Pen, Platform_Circle_Pen , Platform_Inner_Pen ;
+	HBRUSH Platform_Circle_Brush, Platform_Inner_Brush ;
 	RECT Platform_Rect, Prev_Platform_Rect;
 };
 

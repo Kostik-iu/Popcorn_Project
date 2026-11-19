@@ -22,6 +22,16 @@ char Level_01[ALevel::Level_Height][ALevel::Level_Width] =
 	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 };
 //------------------------------------------------------------------------------------------------------------
+
+
+ALevel::ALevel()
+	: Level_Rect{}, Brick_Red_Brush(nullptr), Brick_Blue_Brush(nullptr), Brick_Red_Pen(nullptr), Brick_Blue_Pen(nullptr), Letter_Pen(nullptr)
+{
+
+}
+
+//------------------------------------------------------------------------------------------------------------
+
 void ALevel::Init()
 {
 	Letter_Pen = CreatePen(PS_SOLID, AsConfig::Global_Scale, RGB(255, 255, 255));
