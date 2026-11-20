@@ -19,6 +19,27 @@ void AsBorder::Init()
 
 //------------------------------------------------------------------------------------------------------------
 
+void AsBorder::Draw_Bounds(HDC hdc, RECT& paint_area, HPEN bg_pen, HBRUSH bg_brush)
+{// Рисует рамку уровня
+
+	int i;
+
+	// 1. Линия слева
+	for (i = 0; i < 50; i++)
+		Draw_Element(hdc, 2, 1 + i * 4, false, bg_pen, bg_brush);
+
+	// 2. Линия справаd
+	for (i = 0; i < 50; i++)
+		Draw_Element(hdc, 201, 1 + i * 4, false, bg_pen, bg_brush);
+
+	// 3. Линия сверху
+	for (i = 0; i < 50; i++)
+		Draw_Element(hdc, 3 + i * 4, 0, true, bg_pen, bg_brush);
+
+	//------------------------------------------------------------------------------------------------------------
+
+}
+
 void AsBorder::Draw_Element(HDC hdc, int x, int y, bool top_boder, HPEN bg_pen, HBRUSH bg_brush)
 {// Рисует элемент рамки уровня
 
@@ -50,21 +71,5 @@ void AsBorder::Draw_Element(HDC hdc, int x, int y, bool top_boder, HPEN bg_pen, 
 		Rectangle(hdc, (x + 2) * AsConfig::Global_Scale, (y + 1) * AsConfig::Global_Scale, (x + 3) * AsConfig::Global_Scale, (y + 2) * AsConfig::Global_Scale);
 }
 //------------------------------------------------------------------------------------------------------------
-void AsBorder::Draw_Bounds(HDC hdc, RECT& paint_area, HPEN bg_pen, HBRUSH bg_brush)
-{// Рисует рамку уровня
 
-	int i;
 
-	// 1. Линия слева
-	for (i = 0; i < 50; i++)
-		Draw_Element(hdc, 2, 1 + i * 4, false, bg_pen, bg_brush);
-
-	// 2. Линия справаd
-	for (i = 0; i < 50; i++)
-		Draw_Element(hdc, 201, 1 + i * 4, false, bg_pen, bg_brush);
-
-	// 3. Линия сверху
-	for (i = 0; i < 50; i++)
-		Draw_Element(hdc, 3 + i * 4, 0, true, bg_pen, bg_brush);
-}
-//------------------------------------------------------------------------------------------------------------
