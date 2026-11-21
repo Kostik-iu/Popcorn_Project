@@ -88,7 +88,7 @@ void ABall::Move(AsEngine* engine, ALevel* level, AsPlatform* platform)
 	}
 
 	// Корректируем позицию при отражении от кирпичей
-	level->Check_Level_Brick_Hit(next_y_pos, Ball_Direction);
+	level->Check_Level_Brick_Hit (next_x_pos, next_y_pos, Ball_Direction);
 
 	// Смещаем шарик
 	Ball_X_Pos = next_x_pos;

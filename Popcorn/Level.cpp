@@ -47,7 +47,7 @@ void ALevel::Init()
 
 //------------------------------------------------------------------------------------------------------------
 
-void ALevel::Check_Level_Brick_Hit(int& next_y_pos, double& ball_direction)
+void ALevel::Check_Level_Brick_Hit(int next_x_pos, int& next_y_pos, double& ball_direction)
 {// Корректируем позицию при отражении от кирпичей
 
 	int i, j;
@@ -68,6 +68,8 @@ void ALevel::Check_Level_Brick_Hit(int& next_y_pos, double& ball_direction)
 		}
 
 		brick_y_pos -= Cell_Height;
+
+
 	}
 }
 //------------------------------------------------------------------------------------------------------------
